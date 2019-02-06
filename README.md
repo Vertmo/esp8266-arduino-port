@@ -18,3 +18,5 @@ Inside the home arduino directory (*~/.arduino15* in my case)
 * *packages/esp8266/hardware/esp8266/2.5.0-beta3/tools/sdk/include* -> sdk headers
 * *packages/esp8266/hardware/esp8266/2.5.0-beta3/tools/sdk/libc/xtensa-lx106-elf/lib* -> libc objects
 * *packages/esp8266/hardware/esp8266/2.5.0-beta3/tools/sdk/libc/xtensa-lx106-elf/include* -> libc headers
+
+We could in theory get rid of the arduino library, although suppressing it seems to break the sdk part...
