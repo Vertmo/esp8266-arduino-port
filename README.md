@@ -20,3 +20,11 @@ Inside the home arduino directory (*~/.arduino15* in my case)
 * *packages/esp8266/hardware/esp8266/2.5.0-beta3/tools/sdk/libc/xtensa-lx106-elf/include* -> libc headers
 
 We could in theory get rid of the arduino library, although suppressing it seems to break the sdk part...
+
+## Compilation in OMicroB
+* *pgrm.c* -> *pgrm.esp_o* with `xtensa-lx106-elf-g++`
+* *arducore.a*, *wrapper.o*, *pgrm.esp_o* -> *pgrm.esp_elf* with `xtensa-lx106-elf-ld`
+* *pgrm.esp_elf* -> *pgrm.bin* with `esptool-ck`
+
+## Implementation step
+* Step 1: putting everything in (60Mo on disk): .text segment too big when linking with OMicroB...
