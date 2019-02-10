@@ -28,3 +28,5 @@ We could in theory get rid of the arduino library, although suppressing it seems
 
 ## Implementation step
 * Step 1: putting everything in (60Mo on disk): .text segment too big when linking with OMicroB...
+* Step 2: remove some network libraries (44Mo on disk): .text still too big. I'll have to reduce the size of *arducore.a* which is linked entirely in the final executable.
+* Step 3: with some compile optimizations, it seems to work. We'll see if we can reintroduce network libs later on.
